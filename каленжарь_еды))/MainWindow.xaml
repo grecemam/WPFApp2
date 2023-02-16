@@ -1,0 +1,37 @@
+﻿<Window x:Class="каленжарь_еды__.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:каленжарь_еды__"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Background="#FFB9B9B9">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="310*"/>
+            <RowDefinition Height="89*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="39*"/>
+            <ColumnDefinition Width="41*"/>
+        </Grid.ColumnDefinitions>
+        <DatePicker x:Name="datesel" Margin="10,10,10,0" Grid.ColumnSpan="3" Background="Black" VerticalAlignment="Top" Height="24" FirstDayOfWeek="Monday" SelectedDateFormat="Short"  SelectedDateChanged="DateChanged" />
+        <ListBox x:Name="SpisonZametok" Margin="5,10,5,8" BorderBrush="Black" Grid.Row="1" SelectionChanged="SpisonZametok_SelectionChanged" >
+            <ListBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFCDB5DC" Offset="0.152"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </ListBox.Background>
+        </ListBox>
+        <TextBlock Grid.Column="1" Margin="28,2,28,0" Grid.Row="1" TextWrapping="Wrap" Text="Название" VerticalAlignment="Top" TextAlignment="Center" Height="25" Grid.ColumnSpan="2" FontFamily="Tw Cen MT Condensed Extra Bold" FontSize="30"/>
+        <TextBlock Grid.Column="1" Margin="98,74,106,0" Grid.Row="1" TextWrapping="Wrap" Text="Описание" VerticalAlignment="Top" TextAlignment="Center" Height="38" Grid.ColumnSpan="2" FontFamily="Tw Cen MT Condensed Extra Bold" FontSize="30"/>
+        <Button x:Name="del" Grid.Column="0" Content="Удалить" Grid.Row="2" Height="74" VerticalAlignment="Top" Background="White" Margin="0,21,0,0" Click="del_Click" />
+        <Button x:Name="create" Grid.Column="1" Content="Создать" Grid.Row="2" Height="74" VerticalAlignment="Top"  Background="White" Margin="0,21,0,0" Click="create_Click" />
+        <Button x:Name="save" Grid.Column="2" IsEnabled="False" Content="Сохранить" Grid.Row="2" Height="74" VerticalAlignment="Top" Background="White" Margin="0,21,0,0" Click="save_Click" />
+        <TextBox x:Name="nazvanie" Grid.Column="1" Margin="0,47,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Height="22" Grid.ColumnSpan="2" Background="#FFFFEDED"  SnapsToDevicePixels="True" />
+        <TextBox x:Name="opis" Margin="0,112,0,0" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Height="157" Grid.ColumnSpan="2" Background="#FFFFEDED" Grid.Column="1"/>
+        </Grid>
+</Window>
